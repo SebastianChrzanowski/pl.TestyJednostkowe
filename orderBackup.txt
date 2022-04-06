@@ -1,0 +1,1 @@
+nowe zamuwienieOrder{meals=[Meal{price=7, name='Fries'}, Meal{price=8, name='Soup'}, Meal{price=9, name='Pizza'}]}koniec Wed Apr 06 14:20:45 CEST 2022
