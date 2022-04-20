@@ -1,6 +1,16 @@
 package testing;
 
 public class Account {
+    public Account(Address defaultDeliveryAddress) {
+        this.defaultDeliveryAddress = defaultDeliveryAddress;
+        if(defaultDeliveryAddress != null){
+            activate();
+        }else {
+            this.active=false;
+        }
+    }
+
+    private String email;
 
     private boolean active;
     private Address defaultDeliveryAddress;
@@ -24,5 +34,9 @@ public class Account {
 
     public void setDefaultDeliveryAddress(Address defaultDeliveryAddress) {
         this.defaultDeliveryAddress = defaultDeliveryAddress;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

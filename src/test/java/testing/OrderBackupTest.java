@@ -28,7 +28,7 @@ public class OrderBackupTest {
         String dataak = data.getTime().toString();
         orderBackup.getWriter().append("koniec " + dataak);
     }
-
+    @Tag("Fires")
      @Test
      void backupOrderWithOneMeal() throws IOException {
         //given

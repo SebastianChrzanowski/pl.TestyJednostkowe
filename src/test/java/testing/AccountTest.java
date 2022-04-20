@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 class AccountTest {
 
@@ -88,5 +89,31 @@ class AccountTest {
     // assertThat(defaultAdress, is(notNullValue()));
  }
 
+@Test
+    void newAccountWithNotNullAddressShouldBeActive(){
+        //given
+    Address address = new Address("Gorkiego", "10/12");
 
+    //when
+    Account account = new Account(address);
+
+    //then
+    assumingThat(address != null, ()-> {
+            assertTrue(account.isActive());
+            });
+
+
+
+
+
+}
+    @Test
+    void invalidEmailShouldThrowExeption(){
+        //given
+        Account account1 = new Account();
+
+        //when
+        //then
+        assertThrows(IllegalArgumentException.class, ()->account1.setEmail("Wrong_email"));
+    }
 }
